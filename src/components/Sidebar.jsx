@@ -1,5 +1,5 @@
 import React from 'react';
-import { LayoutGrid, Wallet, Briefcase, Globe, ShieldCheck } from 'lucide-react';
+import { LayoutGrid, Wallet, Briefcase, Globe, Settings } from 'lucide-react';
 
 const Sidebar = ({ activeTab, setActiveTab }) => {
   const navItems = [
@@ -32,13 +32,12 @@ const Sidebar = ({ activeTab, setActiveTab }) => {
       </div>
 
       <div className="p-4 border-t border-gray-800">
-        <div className="flex items-center gap-2 text-gray-500 mb-2">
-          <ShieldCheck size={14} />
-          <span className="hidden md:block text-[10px] font-mono uppercase">System Good</span>
-        </div>
-        <div className="h-1 w-full bg-gray-800 rounded-full overflow-hidden">
-          <div className="h-full bg-green-600 w-full animate-pulse"></div>
-        </div>
+        <button 
+          className="w-full flex items-center justify-center md:justify-start gap-2 px-3 py-2 rounded border border-gray-700 hover:border-amber-500 hover:bg-amber-950/30 text-gray-400 hover:text-amber-500 transition-colors group"
+        >
+          <Settings size={14} className="group-hover:animate-spin" />
+          <span className="hidden md:block text-[10px] font-mono uppercase font-bold">Settings</span>
+        </button>
       </div>
     </aside>
   );

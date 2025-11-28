@@ -47,9 +47,12 @@ function TradingViewTicker() {
 
     container.current.appendChild(script);
 
+    // Store reference to container in variable for cleanup
+    const currentContainer = container.current;
+
     return () => {
-      if (container.current && script.parentNode === container.current) {
-        container.current.removeChild(script);
+      if (currentContainer && script.parentNode === currentContainer) {
+        currentContainer.removeChild(script);
       }
     };
   }, []);

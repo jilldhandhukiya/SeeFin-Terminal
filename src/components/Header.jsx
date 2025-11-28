@@ -17,7 +17,7 @@ const Header = ({ time }) => {
       </div>
       
       <div className="flex items-center gap-4 text-[10px] font-mono text-gray-500 shrink-0">
-        <span className="text-gray-300">{time} IST</span>
+        <span className="text-white">{time}</span>
       </div>
     </header>
   );
