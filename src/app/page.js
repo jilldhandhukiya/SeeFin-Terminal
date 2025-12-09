@@ -5,6 +5,8 @@ import Sidebar from '@/components/Sidebar';
 import CommandBar from '@/components/CommandBar';
 import Dashboard from '@/components/Dashboard';
 import Ledger from '@/components/Ledger';
+import Assets from '@/components/Assets';
+import Wire from '@/components/Wire';
 import LoadingModule from '@/components/LoadingModule';
 import { getCurrentTime } from '@/utils/formatting';
 
@@ -56,7 +58,8 @@ const App = () => {
           <div className="flex-1 p-0.5 overflow-hidden">
             {activeTab === 'DASH' && <Dashboard expenses={expenses} assets={assets} />}
             {activeTab === 'EXP' && <Ledger expenses={expenses} onAdd={(item) => setExpenses(prev => [...prev, {...item, id: Math.random()}])} onDelete={(id) => setExpenses(prev => prev.filter(x => x.id !== id))} />}
-            {(activeTab === 'ASST' || activeTab === 'NEWS') && <LoadingModule activeTab={activeTab} />}
+            {activeTab === 'ASST' && <Assets />}
+            {activeTab === 'NEWS' && <Wire />}
           </div>
         </main>
 

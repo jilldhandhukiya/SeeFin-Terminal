@@ -35,7 +35,7 @@ const Sidebar = ({ activeTab, setActiveTab }) => {
         <button 
           className="w-full flex items-center justify-center md:justify-start gap-2 px-3 py-2 rounded border border-gray-700 hover:border-amber-500 hover:bg-amber-950/30 text-gray-400 hover:text-amber-500 transition-colors group"
         >
-          <Settings size={14} className="group-hover:animate-spin" />
+          <Settings size={14} className="" />
           <span className="hidden md:block text-[10px] font-mono uppercase font-bold">Settings</span>
         </button>
       </div>
