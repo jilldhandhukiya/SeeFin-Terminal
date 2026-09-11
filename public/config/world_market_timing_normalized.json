@@ -1,0 +1,1921 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at_utc": "2026-06-08T06:19:41Z",
+  "description": "Canonical recurring market timing rules. Use IANA time zones and compute UTC at runtime.",
+  "phase_model": [
+    "PRE",
+    "OPEN",
+    "BREAK",
+    "AUCTION",
+    "POST",
+    "CLOSED"
+  ],
+  "refresh_policy": {
+    "compute_utc_from_timezone": true,
+    "holiday_calendar_required": true,
+    "version_hours_by_effective_date": true,
+    "do_not_store_date_bound_iso_as_source_of_truth": true
+  },
+  "markets": [
+    {
+      "market_id": "ar-byma",
+      "country": "Argentina",
+      "exchange": "BYMA (Mercado)",
+      "region": "South America",
+      "timezone": {
+        "iana": "America/Argentina/Buenos_Aires",
+        "label": "ART",
+        "observes_dst": false,
+        "offset_standard": "-3"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "10:30",
+          "end_local": "17:00"
+        }
+      ],
+      "notes": [
+        "Hours changed (effective 7/2025) to 10:30–17:00."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "Argentina",
+        "exchange": "BYMA (Mercado)",
+        "time_zone_local": "ART (UTC-3)",
+        "utc_offset_std_dst": "-3 (no DST)",
+        "pre_open": null,
+        "regular_open": {
+          "local": "10:30",
+          "iso": "2026-05-30T10:30:00-03:00",
+          "utc": "2026-05-30T13:30:00Z"
+        },
+        "regular_close": {
+          "local": "17:00",
+          "iso": "2026-05-30T17:00:00-03:00",
+          "utc": "2026-05-30T20:00:00Z"
+        },
+        "post_close": null,
+        "notes": "Hours changed (effective 7/2025) to 10:30–17:00."
+      }
+    },
+    {
+      "market_id": "au-asx",
+      "country": "Australia",
+      "exchange": "ASX (Sydney)",
+      "region": "Asia-Pacific",
+      "timezone": {
+        "iana": "Australia/Sydney",
+        "label": "AEST/AEDT",
+        "observes_dst": true,
+        "offset_standard": "+10",
+        "offset_daylight": "+11"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "09:59",
+          "end_local": "16:00"
+        }
+      ],
+      "notes": [
+        "No DST; continuous trading."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "Australia",
+        "exchange": "ASX (Sydney)",
+        "time_zone_local": "AEST (UTC+10)",
+        "utc_offset_std_dst": "+10 (no DST)",
+        "pre_open": null,
+        "regular_open": {
+          "local": "09:59",
+          "iso": "2026-05-30T09:59:00+10:00",
+          "utc": "2026-05-29T23:59:00Z"
+        },
+        "regular_close": {
+          "local": "16:00",
+          "iso": "2026-05-30T16:00:00+10:00",
+          "utc": "2026-05-30T06:00:00Z"
+        },
+        "post_close": null,
+        "notes": "No DST; continuous trading."
+      }
+    },
+    {
+      "market_id": "br-b3",
+      "country": "Brazil",
+      "exchange": "B3 (São Paulo)",
+      "region": "South America",
+      "timezone": {
+        "iana": "America/Sao_Paulo",
+        "label": "BRT",
+        "observes_dst": false,
+        "offset_standard": "-3"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "PRE",
+          "label": "Pre-open",
+          "start_local": "09:45",
+          "end_local": "10:00"
+        },
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "10:00",
+          "end_local": "16:55"
+        },
+        {
+          "phase": "POST",
+          "label": "After-market",
+          "start_local": "17:30",
+          "end_local": "18:00"
+        }
+      ],
+      "notes": [
+        "After-market 17:30–18:00."
+      ],
+      "data_quality": {
+        "status": "needs_review",
+        "conflicts": [
+          "raw post_close ends at 17:30, but the note says after-market continues to 18:00; treat 17:30 as session start, not session end."
+        ]
+      },
+      "raw_snapshot": {
+        "country": "Brazil",
+        "exchange": "B3 (São Paulo)",
+        "time_zone_local": "BRT (UTC-3)",
+        "utc_offset_std_dst": "-3 (no DST)",
+        "pre_open": {
+          "local": "09:45",
+          "iso": "2026-05-30T09:45:00-03:00",
+          "utc": "2026-05-30T12:45:00Z"
+        },
+        "regular_open": {
+          "local": "10:00",
+          "iso": "2026-05-30T10:00:00-03:00",
+          "utc": "2026-05-30T13:00:00Z"
+        },
+        "regular_close": {
+          "local": "16:55",
+          "iso": "2026-05-30T16:55:00-03:00",
+          "utc": "2026-05-30T19:55:00Z"
+        },
+        "post_close": {
+          "local": "17:30",
+          "iso": "2026-05-30T17:30:00-03:00",
+          "utc": "2026-05-30T20:30:00Z"
+        },
+        "notes": "After-market 17:30–18:00."
+      }
+    },
+    {
+      "market_id": "ca-tsx",
+      "country": "Canada",
+      "exchange": "TSX (Toronto)",
+      "region": "North America",
+      "timezone": {
+        "iana": "America/Toronto",
+        "label": "ET",
+        "observes_dst": true,
+        "offset_standard": "-5",
+        "offset_daylight": "-4"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "PRE",
+          "label": "Pre-market",
+          "start_local": "07:00",
+          "end_local": "09:30"
+        },
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "09:30",
+          "end_local": "16:00"
+        },
+        {
+          "phase": "POST",
+          "label": "Extended",
+          "start_local": "16:15",
+          "end_local": "17:00"
+        }
+      ],
+      "notes": [
+        "Extended trading 16:15–17:00; DST in effect when applicable."
+      ],
+      "data_quality": {
+        "status": "needs_review",
+        "conflicts": [
+          "raw post_close is 16:15, but the note says extended trading continues until 17:00; represent the full post session explicitly."
+        ]
+      },
+      "raw_snapshot": {
+        "country": "Canada",
+        "exchange": "TSX (Toronto)",
+        "time_zone_local": "ET (UTC-5/-4)",
+        "utc_offset_std_dst": "-5/-4",
+        "pre_open": {
+          "local": "07:00",
+          "iso": "2026-05-30T07:00:00-04:00",
+          "utc": "2026-05-30T11:00:00Z"
+        },
+        "regular_open": {
+          "local": "09:30",
+          "iso": "2026-05-30T09:30:00-04:00",
+          "utc": "2026-05-30T13:30:00Z"
+        },
+        "regular_close": {
+          "local": "16:00",
+          "iso": "2026-05-30T16:00:00-04:00",
+          "utc": "2026-05-30T20:00:00Z"
+        },
+        "post_close": {
+          "local": "16:15",
+          "iso": "2026-05-30T16:15:00-04:00",
+          "utc": "2026-05-30T20:15:00Z"
+        },
+        "notes": "Extended trading 16:15–17:00; DST in effect (-4)."
+      }
+    },
+    {
+      "market_id": "cn-sse",
+      "country": "China",
+      "exchange": "Shanghai (SSE)",
+      "region": "Asia-Pacific",
+      "timezone": {
+        "iana": "Asia/Shanghai",
+        "label": "CST",
+        "observes_dst": false,
+        "offset_standard": "+8"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Morning session",
+          "start_local": "09:30",
+          "end_local": "11:30"
+        },
+        {
+          "phase": "BREAK",
+          "label": "Lunch break",
+          "start_local": "11:30",
+          "end_local": "13:00"
+        },
+        {
+          "phase": "OPEN",
+          "label": "Afternoon session",
+          "start_local": "13:00",
+          "end_local": "14:57"
+        },
+        {
+          "phase": "AUCTION",
+          "label": "Closing auction",
+          "start_local": "14:57",
+          "end_local": "15:00"
+        }
+      ],
+      "notes": [
+        "Break 11:30–13:00; closing auction 14:57–15:00."
+      ],
+      "data_quality": {
+        "status": "needs_review",
+        "conflicts": [
+          "raw regular_close is 14:57; the practical close is the 14:57–15:00 closing auction window, so the schedule should model both."
+        ]
+      },
+      "raw_snapshot": {
+        "country": "China",
+        "exchange": "Shanghai (SSE)",
+        "time_zone_local": "CST (UTC+8)",
+        "utc_offset_std_dst": "+8 (no DST)",
+        "pre_open": null,
+        "regular_open": {
+          "local": "09:30",
+          "iso": "2026-05-30T09:30:00+08:00",
+          "utc": "2026-05-30T01:30:00Z"
+        },
+        "regular_close": {
+          "local": "14:57",
+          "iso": "2026-05-30T14:57:00+08:00",
+          "utc": "2026-05-30T06:57:00Z"
+        },
+        "post_close": null,
+        "notes": "Break 11:30–13:00; see Shenzhen below."
+      }
+    },
+    {
+      "market_id": "cn-szse",
+      "country": "China",
+      "exchange": "Shenzhen (SZSE)",
+      "region": "Asia-Pacific",
+      "timezone": {
+        "iana": "Asia/Shanghai",
+        "label": "CST",
+        "observes_dst": false,
+        "offset_standard": "+8"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Morning session",
+          "start_local": "09:30",
+          "end_local": "11:30"
+        },
+        {
+          "phase": "BREAK",
+          "label": "Lunch break",
+          "start_local": "11:30",
+          "end_local": "13:00"
+        },
+        {
+          "phase": "OPEN",
+          "label": "Afternoon session",
+          "start_local": "13:00",
+          "end_local": "14:57"
+        },
+        {
+          "phase": "AUCTION",
+          "label": "Closing auction",
+          "start_local": "14:57",
+          "end_local": "15:00"
+        }
+      ],
+      "notes": [
+        "Break 11:30–13:00; closing auction 14:57–15:00."
+      ],
+      "data_quality": {
+        "status": "needs_review",
+        "conflicts": [
+          "raw regular_close is 14:57; the practical close is the 14:57–15:00 closing auction window, so the schedule should model both."
+        ]
+      },
+      "raw_snapshot": {
+        "country": "China",
+        "exchange": "Shenzhen (SZSE)",
+        "time_zone_local": "CST (UTC+8)",
+        "utc_offset_std_dst": "+8 (no DST)",
+        "pre_open": null,
+        "regular_open": {
+          "local": "09:30",
+          "iso": "2026-05-30T09:30:00+08:00",
+          "utc": "2026-05-30T01:30:00Z"
+        },
+        "regular_close": {
+          "local": "14:57",
+          "iso": "2026-05-30T14:57:00+08:00",
+          "utc": "2026-05-30T06:57:00Z"
+        },
+        "post_close": null,
+        "notes": "Break 11:30–13:00."
+      }
+    },
+    {
+      "market_id": "eg-egx",
+      "country": "Egypt",
+      "exchange": "EGX (Cairo)",
+      "region": "Africa",
+      "timezone": {
+        "iana": "Africa/Cairo",
+        "label": "EET/EEST",
+        "observes_dst": true,
+        "offset_standard": "+2",
+        "offset_daylight": "+3"
+      },
+      "trading_days": [
+        "SUN",
+        "MON",
+        "TUE",
+        "WED",
+        "THU"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "10:00",
+          "end_local": "14:15"
+        },
+        {
+          "phase": "AUCTION",
+          "label": "Trade-at-close",
+          "start_local": "14:15",
+          "end_local": "14:30"
+        }
+      ],
+      "notes": [
+        "Sun–Thu trading; trade-at-close runs 14:15–14:30 EEST."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "Egypt",
+        "exchange": "EGX (Cairo)",
+        "time_zone_local": "EET/EEST (UTC+2/+3)",
+        "utc_offset_std_dst": "+2/+3",
+        "pre_open": null,
+        "regular_open": {
+          "local": "10:00",
+          "iso": "2026-05-30T10:00:00+03:00",
+          "utc": "2026-05-30T07:00:00Z"
+        },
+        "regular_close": {
+          "local": "14:30",
+          "iso": "2026-05-30T14:30:00+03:00",
+          "utc": "2026-05-30T11:30:00Z"
+        },
+        "post_close": null,
+        "notes": "Sun–Thu trading; trade-at-close runs 14:15–14:30 EEST."
+      }
+    },
+    {
+      "market_id": "fr-euronext-paris",
+      "country": "France",
+      "exchange": "Euronext Paris",
+      "region": "Europe",
+      "timezone": {
+        "iana": "Europe/Paris",
+        "label": "CET/CEST",
+        "observes_dst": true,
+        "offset_standard": "+1",
+        "offset_daylight": "+2"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "09:00",
+          "end_local": "17:30"
+        }
+      ],
+      "notes": [
+        "No break; DST applies when in effect."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "France",
+        "exchange": "Euronext Paris",
+        "time_zone_local": "CET/CEST (UTC+1/+2)",
+        "utc_offset_std_dst": "+1/+2",
+        "pre_open": null,
+        "regular_open": {
+          "local": "09:00",
+          "iso": "2026-05-30T09:00:00+02:00",
+          "utc": "2026-05-30T07:00:00Z"
+        },
+        "regular_close": {
+          "local": "17:30",
+          "iso": "2026-05-30T17:30:00+02:00",
+          "utc": "2026-05-30T15:30:00Z"
+        },
+        "post_close": null,
+        "notes": "No break; DST (+2)."
+      }
+    },
+    {
+      "market_id": "de-xetra",
+      "country": "Germany",
+      "exchange": "Xetra (Frankfurt)",
+      "region": "Europe",
+      "timezone": {
+        "iana": "Europe/Berlin",
+        "label": "CET/CEST",
+        "observes_dst": true,
+        "offset_standard": "+1",
+        "offset_daylight": "+2"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "PRE",
+          "label": "Pre-open",
+          "start_local": "08:00",
+          "end_local": "09:00"
+        },
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "09:00",
+          "end_local": "17:30"
+        },
+        {
+          "phase": "POST",
+          "label": "Late trading",
+          "start_local": "17:30",
+          "end_local": "22:00"
+        }
+      ],
+      "notes": [
+        "Late trading until 22:00 CET/CEST."
+      ],
+      "data_quality": {
+        "status": "needs_review",
+        "conflicts": [
+          "raw post_close repeats the regular close time, but the note says late trading continues until 22:00; model the late session explicitly."
+        ]
+      },
+      "raw_snapshot": {
+        "country": "Germany",
+        "exchange": "Xetra (Frankfurt)",
+        "time_zone_local": "CET/CEST (UTC+1/+2)",
+        "utc_offset_std_dst": "+1/+2",
+        "pre_open": {
+          "local": "08:00",
+          "iso": "2026-05-30T08:00:00+02:00",
+          "utc": "2026-05-30T06:00:00Z"
+        },
+        "regular_open": {
+          "local": "09:00",
+          "iso": "2026-05-30T09:00:00+02:00",
+          "utc": "2026-05-30T07:00:00Z"
+        },
+        "regular_close": {
+          "local": "17:30",
+          "iso": "2026-05-30T17:30:00+02:00",
+          "utc": "2026-05-30T15:30:00Z"
+        },
+        "post_close": {
+          "local": "17:30",
+          "iso": "2026-05-30T17:30:00+02:00",
+          "utc": "2026-05-30T15:30:00Z"
+        },
+        "notes": "Late trading until 22:00 CET."
+      }
+    },
+    {
+      "market_id": "hk-hkex",
+      "country": "Hong Kong",
+      "exchange": "HKEX",
+      "region": "Asia-Pacific",
+      "timezone": {
+        "iana": "Asia/Hong_Kong",
+        "label": "HKT",
+        "observes_dst": false,
+        "offset_standard": "+8"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Morning session",
+          "start_local": "09:30",
+          "end_local": "12:00"
+        },
+        {
+          "phase": "BREAK",
+          "label": "Lunch break",
+          "start_local": "12:00",
+          "end_local": "13:00"
+        },
+        {
+          "phase": "OPEN",
+          "label": "Afternoon session",
+          "start_local": "13:00",
+          "end_local": "16:00"
+        }
+      ],
+      "notes": [
+        "Break 12:00–13:00."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "Hong Kong",
+        "exchange": "HKEX",
+        "time_zone_local": "HKT (UTC+8)",
+        "utc_offset_std_dst": "+8 (no DST)",
+        "pre_open": null,
+        "regular_open": {
+          "local": "09:30",
+          "iso": "2026-05-30T09:30:00+08:00",
+          "utc": "2026-05-30T01:30:00Z"
+        },
+        "regular_close": {
+          "local": "16:00",
+          "iso": "2026-05-30T16:00:00+08:00",
+          "utc": "2026-05-30T08:00:00Z"
+        },
+        "post_close": null,
+        "notes": "Break 12:00–13:00."
+      }
+    },
+    {
+      "market_id": "in-nse-bse",
+      "country": "India",
+      "exchange": "BSE/NSE (Mumbai)",
+      "region": "Asia-Pacific",
+      "timezone": {
+        "iana": "Asia/Kolkata",
+        "label": "IST",
+        "observes_dst": false,
+        "offset_standard": "+5:30"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "PRE",
+          "label": "Pre-open",
+          "start_local": "09:00",
+          "end_local": "09:15"
+        },
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "09:15",
+          "end_local": "15:30"
+        }
+      ],
+      "notes": [
+        "No local after-hours; India does not observe DST."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "India",
+        "exchange": "BSE/NSE (Mumbai)",
+        "time_zone_local": "IST (UTC+5:30)",
+        "utc_offset_std_dst": "+5:30 (no DST)",
+        "pre_open": {
+          "local": "09:00",
+          "iso": "2026-05-30T09:00:00+05:30",
+          "utc": "2026-05-30T03:30:00Z"
+        },
+        "regular_open": {
+          "local": "09:15",
+          "iso": "2026-05-30T09:15:00+05:30",
+          "utc": "2026-05-30T03:45:00Z"
+        },
+        "regular_close": {
+          "local": "15:30",
+          "iso": "2026-05-30T15:30:00+05:30",
+          "utc": "2026-05-30T10:00:00Z"
+        },
+        "post_close": null,
+        "notes": "No local after-hours; India no DST."
+      }
+    },
+    {
+      "market_id": "jp-tse",
+      "country": "Japan",
+      "exchange": "TSE (Tokyo)",
+      "region": "Asia-Pacific",
+      "timezone": {
+        "iana": "Asia/Tokyo",
+        "label": "JST",
+        "observes_dst": false,
+        "offset_standard": "+9"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Morning session",
+          "start_local": "09:00",
+          "end_local": "11:30"
+        },
+        {
+          "phase": "BREAK",
+          "label": "Lunch break",
+          "start_local": "11:30",
+          "end_local": "12:30"
+        },
+        {
+          "phase": "OPEN",
+          "label": "Afternoon session",
+          "start_local": "12:30",
+          "end_local": "15:25"
+        },
+        {
+          "phase": "AUCTION",
+          "label": "Closing auction",
+          "start_local": "15:25",
+          "end_local": "15:30"
+        }
+      ],
+      "notes": [
+        "Continuous trading until 15:25; closing auction runs 15:25–15:30."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "Japan",
+        "exchange": "TSE (Tokyo)",
+        "time_zone_local": "JST (UTC+9)",
+        "utc_offset_std_dst": "+9 (no DST)",
+        "pre_open": null,
+        "regular_open": {
+          "local": "09:00",
+          "iso": "2026-05-30T09:00:00+09:00",
+          "utc": "2026-05-30T00:00:00Z"
+        },
+        "regular_close": {
+          "local": "15:30",
+          "iso": "2026-05-30T15:30:00+09:00",
+          "utc": "2026-05-30T06:30:00Z"
+        },
+        "post_close": null,
+        "notes": "Continuous trading until 15:25; closing auction runs 15:25–15:30."
+      }
+    },
+    {
+      "market_id": "mx-bmv",
+      "country": "Mexico",
+      "exchange": "BMV (Mexico City)",
+      "region": "North America",
+      "timezone": {
+        "iana": "America/Mexico_City",
+        "label": "CST/CDT",
+        "observes_dst": true,
+        "offset_standard": "-6",
+        "offset_daylight": "-5"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "PRE",
+          "label": "Opening auction / pre-open",
+          "start_local": "07:50",
+          "end_local": "08:30"
+        },
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "08:30",
+          "end_local": "15:00"
+        }
+      ],
+      "notes": [
+        "Opening auction 08:00–08:30; DST in effect when applicable."
+      ],
+      "data_quality": {
+        "status": "needs_review",
+        "conflicts": [
+          "raw pre_open is 07:50 while the note says the opening auction is 08:00–08:30; keep the full pre-open window and surface the auction note."
+        ]
+      },
+      "raw_snapshot": {
+        "country": "Mexico",
+        "exchange": "BMV (Mexico City)",
+        "time_zone_local": "CST/CDT (UTC-6/-5)",
+        "utc_offset_std_dst": "-6/-5",
+        "pre_open": {
+          "local": "07:50",
+          "iso": "2026-05-30T07:50:00-05:00",
+          "utc": "2026-05-30T12:50:00Z"
+        },
+        "regular_open": {
+          "local": "08:30",
+          "iso": "2026-05-30T08:30:00-05:00",
+          "utc": "2026-05-30T13:30:00Z"
+        },
+        "regular_close": {
+          "local": "15:00",
+          "iso": "2026-05-30T15:00:00-05:00",
+          "utc": "2026-05-30T20:00:00Z"
+        },
+        "post_close": null,
+        "notes": "Opening auction 08:00–08:30; DST (UTC-5)."
+      }
+    },
+    {
+      "market_id": "nl-euronext-amsterdam",
+      "country": "Netherlands",
+      "exchange": "Euronext Amsterdam",
+      "region": "Europe",
+      "timezone": {
+        "iana": "Europe/Amsterdam",
+        "label": "CET/CEST",
+        "observes_dst": true,
+        "offset_standard": "+1",
+        "offset_daylight": "+2"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "09:00",
+          "end_local": "17:30"
+        }
+      ],
+      "notes": [
+        "No break."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "Netherlands",
+        "exchange": "Euronext Amsterdam",
+        "time_zone_local": "CET/CEST (UTC+1/+2)",
+        "utc_offset_std_dst": "+1/+2",
+        "pre_open": null,
+        "regular_open": {
+          "local": "09:00",
+          "iso": "2026-05-30T09:00:00+02:00",
+          "utc": "2026-05-30T07:00:00Z"
+        },
+        "regular_close": {
+          "local": "17:30",
+          "iso": "2026-05-30T17:30:00+02:00",
+          "utc": "2026-05-30T15:30:00Z"
+        },
+        "post_close": null,
+        "notes": "No break."
+      }
+    },
+    {
+      "market_id": "ng-ngx",
+      "country": "Nigeria",
+      "exchange": "NGX (Lagos)",
+      "region": "Africa",
+      "timezone": {
+        "iana": "Africa/Lagos",
+        "label": "WAT",
+        "observes_dst": false,
+        "offset_standard": "+1"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "09:00",
+          "end_local": "16:00"
+        }
+      ],
+      "notes": [
+        "Expanded to 09:00–16:00 WAT from Apr 2026."
+      ],
+      "data_quality": {
+        "status": "needs_review",
+        "conflicts": [
+          "raw regular_open is 09:30, but the note says the market expanded to 09:00–16:00 from Apr 2026; choose one rule and version it by effective date."
+        ]
+      },
+      "raw_snapshot": {
+        "country": "Nigeria",
+        "exchange": "NGX (Lagos)",
+        "time_zone_local": "WAT (UTC+1)",
+        "utc_offset_std_dst": "+1 (no DST)",
+        "pre_open": null,
+        "regular_open": {
+          "local": "09:30",
+          "iso": "2026-05-30T09:30:00+01:00",
+          "utc": "2026-05-30T08:30:00Z"
+        },
+        "regular_close": {
+          "local": "16:00",
+          "iso": "2026-05-30T16:00:00+01:00",
+          "utc": "2026-05-30T15:00:00Z"
+        },
+        "post_close": null,
+        "notes": "Expanded to 09:00–16:00 WAT from Apr 2026."
+      }
+    },
+    {
+      "market_id": "no-oslo",
+      "country": "Norway",
+      "exchange": "Oslo Børs",
+      "region": "Europe",
+      "timezone": {
+        "iana": "Europe/Oslo",
+        "label": "CET/CEST",
+        "observes_dst": true,
+        "offset_standard": "+1",
+        "offset_daylight": "+2"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Continuous trading",
+          "start_local": "09:00",
+          "end_local": "16:20"
+        },
+        {
+          "phase": "AUCTION",
+          "label": "Closing auction / TAL",
+          "start_local": "16:20",
+          "end_local": "16:30"
+        }
+      ],
+      "notes": [
+        "Continuous trading 09:00–16:20; closing auction and TAL extend to 16:30."
+      ],
+      "data_quality": {
+        "status": "needs_review",
+        "conflicts": [
+          "raw regular_close is 16:30 while the note says continuous trading ends at 16:20 and the last 10 minutes are auction/TAL; model both windows."
+        ]
+      },
+      "raw_snapshot": {
+        "country": "Norway",
+        "exchange": "Oslo Børs",
+        "time_zone_local": "CET/CEST (UTC+1/+2)",
+        "utc_offset_std_dst": "+1/+2",
+        "pre_open": null,
+        "regular_open": {
+          "local": "09:00",
+          "iso": "2026-05-30T09:00:00+02:00",
+          "utc": "2026-05-30T07:00:00Z"
+        },
+        "regular_close": {
+          "local": "16:30",
+          "iso": "2026-05-30T16:30:00+02:00",
+          "utc": "2026-05-30T14:30:00Z"
+        },
+        "post_close": null,
+        "notes": "Continuous trading 09:00–16:20; closing auction and TAL extend to 16:30."
+      }
+    },
+    {
+      "market_id": "pl-wse",
+      "country": "Poland",
+      "exchange": "WSE (Warsaw)",
+      "region": "Europe",
+      "timezone": {
+        "iana": "Europe/Warsaw",
+        "label": "CET/CEST",
+        "observes_dst": true,
+        "offset_standard": "+1",
+        "offset_daylight": "+2"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "09:00",
+          "end_local": "16:50"
+        }
+      ],
+      "notes": [
+        "No break."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "Poland",
+        "exchange": "WSE (Warsaw)",
+        "time_zone_local": "CET/CEST (UTC+1/+2)",
+        "utc_offset_std_dst": "+1/+2",
+        "pre_open": null,
+        "regular_open": {
+          "local": "09:00",
+          "iso": "2026-05-30T09:00:00+02:00",
+          "utc": "2026-05-30T07:00:00Z"
+        },
+        "regular_close": {
+          "local": "16:50",
+          "iso": "2026-05-30T16:50:00+02:00",
+          "utc": "2026-05-30T14:50:00Z"
+        },
+        "post_close": null,
+        "notes": "No break."
+      }
+    },
+    {
+      "market_id": "qa-qe",
+      "country": "Qatar",
+      "exchange": "QE (Doha)",
+      "region": "Middle East",
+      "timezone": {
+        "iana": "Asia/Qatar",
+        "label": "AST",
+        "observes_dst": false,
+        "offset_standard": "+3"
+      },
+      "trading_days": [
+        "SUN",
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "09:30",
+          "end_local": "13:00"
+        }
+      ],
+      "notes": [
+        "Short session; Friday is shorter."
+      ],
+      "data_quality": {
+        "status": "needs_review",
+        "conflicts": [
+          "raw notes say Friday is shorter, but the file does not provide the Friday schedule; keep Friday as a separately versioned special session outside this static payload."
+        ]
+      },
+      "raw_snapshot": {
+        "country": "Qatar",
+        "exchange": "QE (Doha)",
+        "time_zone_local": "AST (UTC+3)",
+        "utc_offset_std_dst": "+3 (no DST)",
+        "pre_open": null,
+        "regular_open": {
+          "local": "09:30",
+          "iso": "2026-05-30T09:30:00+03:00",
+          "utc": "2026-05-30T06:30:00Z"
+        },
+        "regular_close": {
+          "local": "13:00",
+          "iso": "2026-05-30T13:00:00+03:00",
+          "utc": "2026-05-30T10:00:00Z"
+        },
+        "post_close": null,
+        "notes": "Short session (Fri shorter)."
+      }
+    },
+    {
+      "market_id": "sa-tadawul",
+      "country": "Saudi Arabia",
+      "exchange": "Tadawul",
+      "region": "Middle East",
+      "timezone": {
+        "iana": "Asia/Riyadh",
+        "label": "AST",
+        "observes_dst": false,
+        "offset_standard": "+3"
+      },
+      "trading_days": [
+        "SUN",
+        "MON",
+        "TUE",
+        "WED",
+        "THU"
+      ],
+      "sessions": [
+        {
+          "phase": "PRE",
+          "label": "Pre-open",
+          "start_local": "09:30",
+          "end_local": "10:00"
+        },
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "10:00",
+          "end_local": "15:00"
+        }
+      ],
+      "notes": [
+        "Trading Sun–Thu."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "Saudi Arabia",
+        "exchange": "Tadawul",
+        "time_zone_local": "AST (UTC+3)",
+        "utc_offset_std_dst": "+3 (no DST)",
+        "pre_open": {
+          "local": "09:30",
+          "iso": "2026-05-30T09:30:00+03:00",
+          "utc": "2026-05-30T06:30:00Z"
+        },
+        "regular_open": {
+          "local": "10:00",
+          "iso": "2026-05-30T10:00:00+03:00",
+          "utc": "2026-05-30T07:00:00Z"
+        },
+        "regular_close": {
+          "local": "15:00",
+          "iso": "2026-05-30T15:00:00+03:00",
+          "utc": "2026-05-30T12:00:00Z"
+        },
+        "post_close": null,
+        "notes": "Trading Sun–Thu."
+      }
+    },
+    {
+      "market_id": "sg-sgx",
+      "country": "Singapore",
+      "exchange": "SGX",
+      "region": "Asia-Pacific",
+      "timezone": {
+        "iana": "Asia/Singapore",
+        "label": "SGT",
+        "observes_dst": false,
+        "offset_standard": "+8"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Morning session",
+          "start_local": "09:00",
+          "end_local": "12:00"
+        },
+        {
+          "phase": "BREAK",
+          "label": "Lunch break",
+          "start_local": "12:00",
+          "end_local": "13:00"
+        },
+        {
+          "phase": "OPEN",
+          "label": "Afternoon session",
+          "start_local": "13:00",
+          "end_local": "17:00"
+        }
+      ],
+      "notes": [
+        "Midday break 12:00–13:00."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "Singapore",
+        "exchange": "SGX",
+        "time_zone_local": "SGT (UTC+8)",
+        "utc_offset_std_dst": "+8 (no DST)",
+        "pre_open": null,
+        "regular_open": {
+          "local": "09:00",
+          "iso": "2026-05-30T09:00:00+08:00",
+          "utc": "2026-05-30T01:00:00Z"
+        },
+        "regular_close": {
+          "local": "17:00",
+          "iso": "2026-05-30T17:00:00+08:00",
+          "utc": "2026-05-30T09:00:00Z"
+        },
+        "post_close": null,
+        "notes": "Midday break 12:00–13:00."
+      }
+    },
+    {
+      "market_id": "za-jse",
+      "country": "South Africa",
+      "exchange": "JSE (Johannesburg)",
+      "region": "Africa",
+      "timezone": {
+        "iana": "Africa/Johannesburg",
+        "label": "SAST",
+        "observes_dst": false,
+        "offset_standard": "+2"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "09:00",
+          "end_local": "16:50"
+        }
+      ],
+      "notes": [
+        "Last sale by 16:50."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "South Africa",
+        "exchange": "JSE (Johannesburg)",
+        "time_zone_local": "SAST (UTC+2)",
+        "utc_offset_std_dst": "+2 (no DST)",
+        "pre_open": null,
+        "regular_open": {
+          "local": "09:00",
+          "iso": "2026-05-30T09:00:00+02:00",
+          "utc": "2026-05-30T07:00:00Z"
+        },
+        "regular_close": {
+          "local": "16:50",
+          "iso": "2026-05-30T16:50:00+02:00",
+          "utc": "2026-05-30T14:50:00Z"
+        },
+        "post_close": null,
+        "notes": "Last sale by 16:50."
+      }
+    },
+    {
+      "market_id": "kr-krx",
+      "country": "South Korea",
+      "exchange": "KRX (Seoul)",
+      "region": "Asia-Pacific",
+      "timezone": {
+        "iana": "Asia/Seoul",
+        "label": "KST",
+        "observes_dst": false,
+        "offset_standard": "+9"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Morning session",
+          "start_local": "09:00",
+          "end_local": "11:30"
+        },
+        {
+          "phase": "BREAK",
+          "label": "Lunch break",
+          "start_local": "11:30",
+          "end_local": "12:20"
+        },
+        {
+          "phase": "OPEN",
+          "label": "Afternoon session",
+          "start_local": "12:20",
+          "end_local": "15:20"
+        }
+      ],
+      "notes": [
+        "Break 11:30–12:20."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "South Korea",
+        "exchange": "KRX (Seoul)",
+        "time_zone_local": "KST (UTC+9)",
+        "utc_offset_std_dst": "+9 (no DST)",
+        "pre_open": null,
+        "regular_open": {
+          "local": "09:00",
+          "iso": "2026-05-30T09:00:00+09:00",
+          "utc": "2026-05-30T00:00:00Z"
+        },
+        "regular_close": {
+          "local": "15:20",
+          "iso": "2026-05-30T15:20:00+09:00",
+          "utc": "2026-05-30T06:20:00Z"
+        },
+        "post_close": null,
+        "notes": "Break 11:30–12:20."
+      }
+    },
+    {
+      "market_id": "es-bolsa-madrid",
+      "country": "Spain",
+      "exchange": "Bolsa Madrid",
+      "region": "Europe",
+      "timezone": {
+        "iana": "Europe/Madrid",
+        "label": "CET/CEST",
+        "observes_dst": true,
+        "offset_standard": "+1",
+        "offset_daylight": "+2"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "PRE",
+          "label": "Opening auction",
+          "start_local": "08:30",
+          "end_local": "09:00"
+        },
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "09:00",
+          "end_local": "17:30"
+        }
+      ],
+      "notes": [
+        "Opening auction 08:30–09:00."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "Spain",
+        "exchange": "Bolsa Madrid",
+        "time_zone_local": "CET/CEST (UTC+1/+2)",
+        "utc_offset_std_dst": "+1/+2",
+        "pre_open": {
+          "local": "08:30",
+          "iso": "2026-05-30T08:30:00+02:00",
+          "utc": "2026-05-30T06:30:00Z"
+        },
+        "regular_open": {
+          "local": "09:00",
+          "iso": "2026-05-30T09:00:00+02:00",
+          "utc": "2026-05-30T07:00:00Z"
+        },
+        "regular_close": {
+          "local": "17:30",
+          "iso": "2026-05-30T17:30:00+02:00",
+          "utc": "2026-05-30T15:30:00Z"
+        },
+        "post_close": null,
+        "notes": "Opening auction 08:30–09:00."
+      }
+    },
+    {
+      "market_id": "se-stockholm",
+      "country": "Sweden",
+      "exchange": "Nasdaq Stockholm",
+      "region": "Europe",
+      "timezone": {
+        "iana": "Europe/Stockholm",
+        "label": "CET/CEST",
+        "observes_dst": true,
+        "offset_standard": "+1",
+        "offset_daylight": "+2"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "09:00",
+          "end_local": "17:25"
+        }
+      ],
+      "notes": [
+        "No break."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "Sweden",
+        "exchange": "Nasdaq Stockholm",
+        "time_zone_local": "CET/CEST (UTC+1/+2)",
+        "utc_offset_std_dst": "+1/+2",
+        "pre_open": null,
+        "regular_open": {
+          "local": "09:00",
+          "iso": "2026-05-30T09:00:00+02:00",
+          "utc": "2026-05-30T07:00:00Z"
+        },
+        "regular_close": {
+          "local": "17:25",
+          "iso": "2026-05-30T17:25:00+02:00",
+          "utc": "2026-05-30T15:25:00Z"
+        },
+        "post_close": null,
+        "notes": "No break."
+      }
+    },
+    {
+      "market_id": "ch-six",
+      "country": "Switzerland",
+      "exchange": "SIX Swiss Ex. (Zurich)",
+      "region": "Europe",
+      "timezone": {
+        "iana": "Europe/Zurich",
+        "label": "CET/CEST",
+        "observes_dst": true,
+        "offset_standard": "+1",
+        "offset_daylight": "+2"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "PRE",
+          "label": "Pre-open",
+          "start_local": "06:00",
+          "end_local": "09:00"
+        },
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "09:00",
+          "end_local": "17:30"
+        },
+        {
+          "phase": "POST",
+          "label": "Extended trading",
+          "start_local": "17:30",
+          "end_local": "22:00"
+        }
+      ],
+      "notes": [
+        "Extended trading until 22:00."
+      ],
+      "data_quality": {
+        "status": "needs_review",
+        "conflicts": [
+          "raw post_close repeats the regular close time, but the note says extended trading continues until 22:00; model the extended session explicitly."
+        ]
+      },
+      "raw_snapshot": {
+        "country": "Switzerland",
+        "exchange": "SIX Swiss Ex. (Zurich)",
+        "time_zone_local": "CET/CEST (UTC+1/+2)",
+        "utc_offset_std_dst": "+1/+2",
+        "pre_open": {
+          "local": "06:00",
+          "iso": "2026-05-30T06:00:00+02:00",
+          "utc": "2026-05-30T04:00:00Z"
+        },
+        "regular_open": {
+          "local": "09:00",
+          "iso": "2026-05-30T09:00:00+02:00",
+          "utc": "2026-05-30T07:00:00Z"
+        },
+        "regular_close": {
+          "local": "17:30",
+          "iso": "2026-05-30T17:30:00+02:00",
+          "utc": "2026-05-30T15:30:00Z"
+        },
+        "post_close": {
+          "local": "17:30",
+          "iso": "2026-05-30T17:30:00+02:00",
+          "utc": "2026-05-30T15:30:00Z"
+        },
+        "notes": "Extended trading until 22:00."
+      }
+    },
+    {
+      "market_id": "tw-twse",
+      "country": "Taiwan",
+      "exchange": "TWSE (Taipei)",
+      "region": "Asia-Pacific",
+      "timezone": {
+        "iana": "Asia/Taipei",
+        "label": "CST",
+        "observes_dst": false,
+        "offset_standard": "+8"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "09:00",
+          "end_local": "13:25"
+        }
+      ],
+      "notes": [
+        "No break."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "Taiwan",
+        "exchange": "TWSE (Taipei)",
+        "time_zone_local": "CST (UTC+8)",
+        "utc_offset_std_dst": "+8 (no DST)",
+        "pre_open": null,
+        "regular_open": {
+          "local": "09:00",
+          "iso": "2026-05-30T09:00:00+08:00",
+          "utc": "2026-05-30T01:00:00Z"
+        },
+        "regular_close": {
+          "local": "13:25",
+          "iso": "2026-05-30T13:25:00+08:00",
+          "utc": "2026-05-30T05:25:00Z"
+        },
+        "post_close": null,
+        "notes": "No break."
+      }
+    },
+    {
+      "market_id": "th-set",
+      "country": "Thailand",
+      "exchange": "SET (Bangkok)",
+      "region": "Asia-Pacific",
+      "timezone": {
+        "iana": "Asia/Bangkok",
+        "label": "ICT",
+        "observes_dst": false,
+        "offset_standard": "+7"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Morning session",
+          "start_local": "10:00",
+          "end_local": "12:30"
+        },
+        {
+          "phase": "BREAK",
+          "label": "Lunch break",
+          "start_local": "12:30",
+          "end_local": "14:00"
+        },
+        {
+          "phase": "OPEN",
+          "label": "Afternoon session",
+          "start_local": "14:00",
+          "end_local": "16:30"
+        }
+      ],
+      "notes": [
+        "Break 12:30–14:00."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "Thailand",
+        "exchange": "SET (Bangkok)",
+        "time_zone_local": "ICT (UTC+7)",
+        "utc_offset_std_dst": "+7 (no DST)",
+        "pre_open": null,
+        "regular_open": {
+          "local": "10:00",
+          "iso": "2026-05-30T10:00:00+07:00",
+          "utc": "2026-05-30T03:00:00Z"
+        },
+        "regular_close": {
+          "local": "16:30",
+          "iso": "2026-05-30T16:30:00+07:00",
+          "utc": "2026-05-30T09:30:00Z"
+        },
+        "post_close": null,
+        "notes": "Break 12:30–14:00."
+      }
+    },
+    {
+      "market_id": "gb-lse",
+      "country": "United Kingdom",
+      "exchange": "LSE (London)",
+      "region": "Europe",
+      "timezone": {
+        "iana": "Europe/London",
+        "label": "GMT/BST",
+        "observes_dst": true,
+        "offset_standard": "+0",
+        "offset_daylight": "+1"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "08:00",
+          "end_local": "16:30"
+        }
+      ],
+      "notes": [
+        "No lunch break; DST applies when in effect."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "United Kingdom",
+        "exchange": "LSE (London)",
+        "time_zone_local": "GMT/BST (UTC+0/+1)",
+        "utc_offset_std_dst": "+0/+1",
+        "pre_open": null,
+        "regular_open": {
+          "local": "08:00",
+          "iso": "2026-05-30T08:00:00+01:00",
+          "utc": "2026-05-30T07:00:00Z"
+        },
+        "regular_close": {
+          "local": "16:30",
+          "iso": "2026-05-30T16:30:00+01:00",
+          "utc": "2026-05-30T15:30:00Z"
+        },
+        "post_close": null,
+        "notes": "No lunch break; DST (+1)."
+      }
+    },
+    {
+      "market_id": "us-nyse",
+      "country": "United States",
+      "exchange": "NYSE (NYSE Arca)",
+      "region": "North America",
+      "timezone": {
+        "iana": "America/New_York",
+        "label": "ET",
+        "observes_dst": true,
+        "offset_standard": "-5",
+        "offset_daylight": "-4"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "PRE",
+          "label": "Pre-open",
+          "start_local": "06:30",
+          "end_local": "09:30"
+        },
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "09:30",
+          "end_local": "16:00"
+        },
+        {
+          "phase": "POST",
+          "label": "After-hours",
+          "start_local": "16:00",
+          "end_local": "20:00"
+        }
+      ],
+      "notes": [
+        "Pre-open (Tape A) 06:30; after-hours to 20:00."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "United States",
+        "exchange": "NYSE (NYSE Arca)",
+        "time_zone_local": "ET (UTC-5/-4)",
+        "utc_offset_std_dst": "-5/-4",
+        "pre_open": {
+          "local": "06:30",
+          "iso": "2026-05-30T06:30:00-04:00",
+          "utc": "2026-05-30T10:30:00Z"
+        },
+        "regular_open": {
+          "local": "09:30",
+          "iso": "2026-05-30T09:30:00-04:00",
+          "utc": "2026-05-30T13:30:00Z"
+        },
+        "regular_close": {
+          "local": "16:00",
+          "iso": "2026-05-30T16:00:00-04:00",
+          "utc": "2026-05-30T20:00:00Z"
+        },
+        "post_close": {
+          "local": "16:00",
+          "iso": "2026-05-30T16:00:00-04:00",
+          "utc": "2026-05-30T20:00:00Z"
+        },
+        "notes": "Pre-open (Tape A) 06:30; after-hours to 20:00."
+      }
+    },
+    {
+      "market_id": "us-nasdaq",
+      "country": "United States",
+      "exchange": "NASDAQ",
+      "region": "North America",
+      "timezone": {
+        "iana": "America/New_York",
+        "label": "ET",
+        "observes_dst": true,
+        "offset_standard": "-5",
+        "offset_daylight": "-4"
+      },
+      "trading_days": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI"
+      ],
+      "sessions": [
+        {
+          "phase": "PRE",
+          "label": "Pre-market",
+          "start_local": "04:00",
+          "end_local": "09:30"
+        },
+        {
+          "phase": "OPEN",
+          "label": "Regular",
+          "start_local": "09:30",
+          "end_local": "16:00"
+        },
+        {
+          "phase": "POST",
+          "label": "After-hours",
+          "start_local": "16:00",
+          "end_local": "20:00"
+        }
+      ],
+      "notes": [
+        "Pre-market 04:00–09:30; after-hours 16:00–20:00."
+      ],
+      "data_quality": {
+        "status": "ok",
+        "conflicts": []
+      },
+      "raw_snapshot": {
+        "country": "United States",
+        "exchange": "NASDAQ",
+        "time_zone_local": "ET (UTC-5/-4)",
+        "utc_offset_std_dst": "-5/-4",
+        "pre_open": {
+          "local": "04:00",
+          "iso": "2026-05-30T04:00:00-04:00",
+          "utc": "2026-05-30T08:00:00Z"
+        },
+        "regular_open": {
+          "local": "09:30",
+          "iso": "2026-05-30T09:30:00-04:00",
+          "utc": "2026-05-30T13:30:00Z"
+        },
+        "regular_close": {
+          "local": "16:00",
+          "iso": "2026-05-30T16:00:00-04:00",
+          "utc": "2026-05-30T20:00:00Z"
+        },
+        "post_close": {
+          "local": "16:00",
+          "iso": "2026-05-30T16:00:00-04:00",
+          "utc": "2026-05-30T20:00:00Z"
+        },
+        "notes": "Pre-market 04:00–09:30, after-hours 16:00–20:00."
+      }
+    }
+  ]
+}
