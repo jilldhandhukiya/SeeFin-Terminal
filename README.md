@@ -63,54 +63,6 @@ Modern financial markets demand split-second decision making, cross-asset risk v
 - **High-Fidelity Telemetry**: 60 FPS hardware rendering with zero frame drop during rapid market updates.
 - **Blotter Purge & Memory Management**: One-click local cache reset for clean daily simulation trading sessions.
 
----
-
-## Product Development Budget & Capital Allocation
-
-The development of the SeeFin Terminal is structured into milestone-driven phases backed by an allocated capital budget of **$320,000 USD** (equivalent to ~₹2.65 Cr).
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                     SEEFIN TERMINAL - CAPITAL ALLOCATION                    │
-├──────────────────────────────────────┬─────────────┬────────────────────────┤
-│ R&D Phase & Workstream               │ Allocation  │ Budget (USD)           │
-├──────────────────────────────────────┼─────────────┼────────────────────────┤
-│ UI/UX Design & High-Density Engine   │ 25%         │ $80,000                │
-│ Quantitative Risk & Options Chain    │ 30%         │ $96,000                │
-│ Real-Time Market Feed Simulation     │ 20%         │ $64,000                │
-│ Private Treasury Ledger & Wire Vault │ 15%         │ $48,000                │
-│ Compliance, Testing & Quality Desk   │ 10%         │ $32,000                │
-├──────────────────────────────────────┼─────────────┼────────────────────────┤
-│ Total Project Capital                │ 100%        │ $320,000               │
-└──────────────────────────────────────┴─────────────┴────────────────────────┘
-```
-
-### Budget Breakdown by Workstream
-
-1. **Terminal Architecture & High-Density UI ($80,000)**
-   - Custom Bloomberg-inspired layout framework (`TerminalGrid`, `TerminalPanel`, hairline borders).
-   - Zero-latency responsive viewport management across multi-monitor setups.
-   - Retro phosphor green, scanline shaders, and accessibility typography.
-
-2. **Options Derivatives & Quantitative Risk Lab ($96,000)**
-   - Real-time options pricing mathematical engine (Black-Scholes Greek modeling: Delta, Gamma, Vega, Theta).
-   - 95% parametric Value-at-Risk (VaR), portfolio beta, and Sharpe ratio calculators.
-   - Automated portfolio drift detection algorithms and rebalancing modeling.
-
-3. **Simulated Market Engine & Tick Generation ($64,000)**
-   - Synthetic Level-2 order book depth generator with realistic spreads and queue dynamics.
-   - Historical and real-time equity & crypto pricing simulation for risk-free strategy validation.
-
-4. **Treasury Management & Encrypted Wire Desk ($48,000)**
-   - Dual-entry corporate ledger for multi-entity family offices and funds.
-   - Encrypted private wire broadcast system for confidential advisory feeds.
-
-5. **Security Enclave, QA & Performance Tuning ($32,000)**
-   - Memory leak prevention for continuous 24/7 multi-day operational sessions.
-   - Cross-platform visual validation and sub-millisecond interaction benchmarking.
-
----
-
 ## Product Roadmap & Milestones
 
 | Milestone | Target Deliverable | Status |
@@ -132,5 +84,3 @@ The development of the SeeFin Terminal is structured into milestone-driven phase
 - **Private Investors**: Seek an institutional Bloomberg-style interface to monitor net worth, liabilities, and multi-asset wealth.
 
 ---
-
-*© 2026 SeeFin Financial Technologies. All rights reserved. Confidential product documentation.*
